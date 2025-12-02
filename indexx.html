@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Selectores CSS</title>
+    <link rel="stylesheet" href="styles.css"> </head>
+<body>
+    <div id="encabezado-principal">
+        <h1>Título de la Página</h1>
+    </div>
+
+    <p>Este es un párrafo simple. El estilo se aplica a todos los elementos "p".</p>
+
+    <p class="resaltado">Este párrafo tiene un estilo diferente porque usa una clase.</p>
+    <button class="resaltado">Este botón también usa la misma clase.</button>
+</body>
+</html>
+
+<div class="contenedor">
+    <p>Párrafo 1 (Hijo Directo de .contenedor)</p>
+    <div>
+        <p>Párrafo 2 (NIETO de .contenedor)</p>
+    </div>
+    <p>Párrafo 3 (Hijo Directo de .contenedor)</p>
+    <span>Texto antes del hermano adyacente.</span>
+    <p class="hermano-adyacente">Párrafo 4 (Hermano Adyacente de span)</p>
+    <p>Párrafo 5 (Hermano General de span)</p>
+    <p>Párrafo 6 (Otro Hermano General de span)</p>
+</div>
+
+
+<section class="ejercicio-hijo-directo">
+    <h2>2. Selector de Hijo Directo (>)</h2>
+    <div class="padre-estricto">
+        <p>Párrafo 1: Soy un **hijo directo** de .padre-estricto. ¡Debo tener borde!</p>
+        <div>
+            <p>Párrafo 2: Soy un **nieto** de .padre-estricto. ¡No debo tener borde!</p>
+        </div>
+        <p>Párrafo 3: Soy otro **hijo directo**. ¡Debo tener borde!</p>
+    </div>
+</section>
+
+<section class="ejercicio-hermano-general">
+    <h2>4. Selector de Hermano General (~)</h2>
+    <div class="padre-hermanos">
+        <h3>Elemento Inicial (El Punto de Referencia)</h3>
+        <p>Hermano 1 (Sigue al h3)</p>
+        <p>Hermano 2 (Sigue al h3)</p>
+        <span class="separador">Este span no es un párrafo.</span>
+        <p>Hermano 3 (Sigue al h3 y a span)</p>
+        <div>Este div no es un hermano P.</div>
+        <p>Hermano 4 (Sigue al h3, span y div)</p>
+    </div>
+</section>
+
+<nav class="navegacion-combinada">
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li>
+            <a href="#">Productos</a>
+            <ul>
+                <li><a href="#">Electrónica</a></li>
+                <li><a href="#">Ropa</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Servicios</a></li>
+        <li class="referencia-hermano">Contacto</li>
+        <li><a href="#">Ubicación</a></li>
+    </ul>
+</nav>
+
+<section class="ejercicio-tarjeta">
+    <h2>6. Estilización de Tarjetas con Combinadores</h2>
+    <div class="tarjeta-producto">
+        <header>
+            <h3>Título Principal de la Tarjeta</h3>
+        </header>
+        <p>Descripción corta del producto (Hijo Directo de .tarjeta-producto).</p>
+        
+        <div class="detalles">
+            <h4>Detalles Adicionales</h4>
+            <p>Precio e información técnica (NIETO de .tarjeta-producto).</p>
+        </div>
+        
+        <a href="#" class="boton-comprar">Comprar Ahora</a>
+    </div>
+</section>
+
+<div id="contenedor-principal">
+    <p>Item 1</p>
+    <div>
+        <p>Item 2</p>
+    </div>
+    <span class="separador"></span>
+    <p>Item 3</p>
+    <p>Item 4</p>
+</div>
+
+<section class="bloque-contenido">
+    <h2>Estructura Optimizada</h2>
+    
+    <nav class="navegacion-principal">
+        <ul>
+            <li class="item-menu">
+                <a href="#">Menú Principal (Hijo Directo)</a>
+                <ul> 
+                    <li><a href="#">Sub-item 1</a></li>
+                    <li><a href="#">Sub-item 2</a></li>
+                </ul>
+            </li>
+            
+            <li class="item-menu referencia-hermano">
+                <a href="#">Referencia</a>
+            </li>
+            
+            <li class="item-menu">
+                <a href="#">Siguiente Adyacente</a>
+            </li>
+            <li class="item-menu">
+                <a href="#">Último Hermano General</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <p class="titulo-seccion">Título que afecta a sus hermanos (Referencia)</p>
+    <p>Párrafo inmediatamente adyacente (+)</p>
+    <div>Contenedor intermedio</div>
+    <p>Párrafo hermano general (~)</p>
+</section>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Caja y Layout Optimizados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        <header>
+            <h1>Título de la Sección</h1>
+        </header>
+
+        <div class="fila-flexible">
+            <div class="bloque-contenido bloque-1">
+                <h3>Bloque Básico (Block)</h3>
+                <p>Este es un párrafo de ejemplo con contenido.</p>
+                <span class="etiqueta">Etiqueta 1</span>
+                <span class="etiqueta">Etiqueta 2</span>
+            </div>
+
+            <div class="bloque-contenido bloque-2">
+                <h3>Bloque Interactivo (Inline-Block)</h3>
+                <a href="#" class="enlace-accion">Enlace 1</a>
+                <a href="#" class="enlace-accion">Enlace 2</a>
+            </div>
+        </div>
+
+        <div class="tarjeta-caja">
+            <h4>Tarjeta de Producto</h4>
+            <div class="elemento-interno">
+                Contenido Interno (20px Padding)
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<nav class="menu-principal">
+    <h2>Navegación Avanzada</h2>
+    <ul class="lista-menu">
+        <li class="item-menu">
+            <a href="#">Inicio</a>
+        </li>
+        <li class="item-menu item-principal">
+            <a href="#">Servicios</a>
+            <ul class="submenu">
+                <li><a href="#">Consultoría</a></li>
+                <li><a href="#">Desarrollo</a></li>
+                <li><a href="#">Soporte</a></li>
+            </ul>
+        </li>
+        <li class="item-menu item-referencia">
+            <a href="#">Contacto</a>
+        </li>
+        <li class="item-menu">
+            <a href="#">Blog</a>
+        </li>
+    </ul>
+</nav>
+<button class="boton-accion">Registrarse</button>
+<p>Información adicional post-menú.</p>
+
+<section class="contenedor-perfiles">
+    <h2>Miembros del Equipo</h2>
+    
+    <div class="perfil-tarjeta">
+        <img src="avatar.jpg" alt="Foto de Perfil" class="avatar">
+        
+        <div class="info-personal">
+            <h3>Juan Pérez</h3>
+            <p class="cargo">Desarrollador Senior</p>
+            
+            <ul class="redes-sociales">
+                <li><a href="#" target="_blank">LinkedIn</a></li>
+                <li><a href="#" target="_blank">GitHub</a></li>
+                <li><a href="#" target="_blank">Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <button class="boton-contacto">Contactar a Juan</button>
+
+    <p>Ver más perfiles del equipo.</p>
+</section>
